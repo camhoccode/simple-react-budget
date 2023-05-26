@@ -22,9 +22,13 @@ export default function ExpenseList() {
       <h2>Costs</h2>
       <ExpenseListFilter filterExpenses={handleFilterExpenses} />
       <div>
-        {filteredExpenses.map((item) => (
-          <ExpenseListItem key={item.id} {...item} />
-        ))}
+        {!!expenses.length ? (
+          filteredExpenses.map((item) => (
+            <ExpenseListItem key={item.id} {...item} />
+          ))
+        ) : (
+          <p>No Expenses Added</p>
+        )}
       </div>
     </div>
   );

@@ -12,7 +12,10 @@ export default function Remaining() {
   }, [expenses, sumCost]);
   return (
     <div>
-      <span>Remaining: {budget - sumCost}</span>
+      <span>
+        Remaining: {budget - sumCost}
+        {budget <= sumCost && <p>{` (Not good !)`}</p>}
+      </span>
     </div>
   );
 }
